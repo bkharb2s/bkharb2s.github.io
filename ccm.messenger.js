@@ -8,7 +8,8 @@ ccm.component( {
     key:   'testmessenger',
     store: [ ccm.store, { url: 'ws://ccm2.inf.h-brs.de/index.js', store: 'messengerstore123' } ],
     style: [ ccm.load, 'style.css' ],
-    user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ]
+    user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ],
+    icons: [ ccm.load, 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'  ]
 
   },
 
@@ -46,17 +47,91 @@ ccm.component( {
           for ( var i = 0; i < dataset.messages.length; i++ ) {
 
           
-            var message = dataset.messages[ i ];
+                addMessage(i);
 
-            messages_div.append( ccm.helper.html( self.html.get( 'message' ), {
+          }     
+            
+            function addMessage(i){
+              var message = dataset.messages[ i ];
 
+              messages_div.append( ccm.helper.html( self.html.get( 'message' ), {
+            
+              click: function(){
+                  removeMessage(i);
+              },
               name: ccm.helper.val( message.user ),
-              text: ccm.helper.val( message.text )
+              datum: ccm.helper.val(message.datum),
+              text: ccm.helper.val( message.text ),
+              vernichten: function(){
+                  destroy(i);
+              }
 
             } ) );
+            }
+            function destroy(index){
+                if(dataset.messages[index].user===self.user.data().key){
+                dataset.messages.splice(index,1);     
+                  self.store.set(dataset,function(){
+                           self.render();
+                       });
+                }
+                else{
+                    alert("Sie dürfen diese Nachricht nicht vernichten.");
+                }
+            }
+            
+            
+            function removeMessage(index){
+                self.user.login(function(){
+                   if(dataset.messages[index].user===self.user.data().key){
+                        dataset.messages[index].text="Die Nachricht wurde entfernt.";
+                       
+                       self.store.set(dataset,function(){
+                           self.render();
+                       });
+                       
+                       
+                   } 
+                   else{
+                       alert("Sie dürfen diese Nachricht nicht löschen.");
+                   }
+                });
+                
+                
+            }
+            
+            
+    function getTime(){
+    var date = new Date();
+	var stunden = date.getHours();
+	var minuten = date.getMinutes();
+    var seconde = date.getSeconds();
+	var tag = date.getDate();
+	var monatDesJahres = date.getMonth();
+	var jahr = date.getFullYear();
+	var tagInWoche = date.getDay();
+	var wochentag = new Array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
+	var monat = new Array("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 
-          }
+	var datum;
+        console.log(datum);
 
+    if(minuten<10){
+         datum = wochentag[tagInWoche] + ", " + tag + ". " + monat[monatDesJahres] + " " + jahr + "<br>" + stunden+":0" + minuten ;
+
+    }else{
+          datum = wochentag[tagInWoche] + ", " + tag + ". " + monat[monatDesJahres] + " " + jahr + "<br>" + stunden+":" + minuten ;
+
+    }
+
+        return datum;
+    };
+            
+            
+            
+            
+            
+            
           messages_div.append( ccm.helper.html( self.html.get( 'input' ), { onsubmit: function () {
 
             
@@ -67,7 +142,7 @@ ccm.component( {
             
             self.user.login( function () {
 
-              dataset.messages.push( { user: self.user.data().key, text: value } );
+              dataset.messages.push( { user: self.user.data().key, datum: getTime()  ,text: value } );
 
               self.store.set( dataset, function () { self.render(); } );
 

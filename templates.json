@@ -9,15 +9,34 @@
     "class": "message",
     "inner": [
       {
+        "tag":"button",
+        "class":"fa fa-close",
+        "onclick":"%click%"
+        
+      },
+        
+        
+      {
         "tag": "div",
         "class": "name",
         "inner": "%name%"
+      },
+        
+      {
+          "tag": "div",
+          "class": "datum",
+          "inner": "%datum%"
       },
       {
         "tag": "div",
         "class": "text",
         "inner": "%text%"
+      },{
+          "tag":"button",
+          "class":"fa fa-bitbucket",
+          "onclick":"%vernichten%"
       }
+        
     ]
   },
 

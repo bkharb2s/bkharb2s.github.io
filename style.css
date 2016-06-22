@@ -1,30 +1,66 @@
-/**
- * @overview default style of ccm component for simple chats
- * @author André Kless <andre.kless@web.de.de> 2016
- */
-
-.ccm-chat > .messages {
+.ccm-messenger > .messages {
 
   display: table;
   padding: 0.5em;
 
 }
 
-.ccm-chat > .messages > div {
-
-  display: table-row;
+.ccm-messenger > .messages > div {
 
 }
 
-.ccm-chat > .messages > div > div {
-
-  display: table-cell;
+.ccm-messenger > .messages > div > div {
 
 }
 
-.ccm-chat > .messages > .message > .name:after {
+.ccm-messenger > .messages > .message{
+    padding: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color:aquamarine;
+    border-radius: 5px;
+    margin-top: 3%;
+    
+}
 
-  content: ':';
-  padding-right: 0.5em;
 
+.ccm-messenger > .messages > .message > .name:after{
+    content: ' : ';
+}
+
+.ccm-messenger > .messages > .message > .text{
+    color: blue;
+}
+
+.ccm-messenger > .messages > .message > .datum{
+    color: green;
+}
+
+
+.fa-close{
+    color: red;
+    margin-left: 90%;
+    font-size: 20px;
+}
+
+.ccm-messenger > div > div > div > form{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.ccm-messenger > div > div > div > form >.button{
+    border-radius: 5px;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.ccm-messenger > div > div > div > form >.input{
+    border-radius: 5px;
+    width: 30%;
+    height: 30px;
+    margin-top:5%; 
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 5%;
 }
