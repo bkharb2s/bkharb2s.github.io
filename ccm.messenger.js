@@ -20,6 +20,8 @@ ccm.component( {
 
     self.init = function ( callback ) {
 
+      self.store.onchange = function(){self.render();};
+      
       callback();
 
     };
