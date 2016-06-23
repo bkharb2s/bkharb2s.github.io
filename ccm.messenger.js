@@ -18,9 +18,9 @@ ccm.component( {
 
     var self = this;
 
-    self.init = function ( callback ) {
+    self.init=function( callback ) {
 
-      self.store.onchange = function(){self.render();};
+      self.store.onChange = function(){self.render();};
       
       callback();
 
@@ -61,8 +61,8 @@ ccm.component( {
               click: function(){
                   removeMessage(i);
               },
-              name: ccm.helper.val( message.user ),
               datum: ccm.helper.val(message.datum),
+              name: ccm.helper.val( message.user ),
               text: ccm.helper.val( message.text ),
               vernichten: function(){
                   destroy(i);
@@ -119,10 +119,10 @@ ccm.component( {
         console.log(datum);
 
     if(minuten<10){
-         datum = wochentag[tagInWoche] + ", " + tag + ". " + monat[monatDesJahres] + " " + jahr + "<br>" + stunden+":0" + minuten ;
+         datum = wochentag[tagInWoche] + ", " + tag + ". " + monat[monatDesJahres] + " " + jahr + " um " + stunden+":0" + minuten ;
 
     }else{
-          datum = wochentag[tagInWoche] + ", " + tag + ". " + monat[monatDesJahres] + " " + jahr + "<br>" + stunden+":" + minuten ;
+          datum = wochentag[tagInWoche] + ", " + tag + ". " + monat[monatDesJahres] + " " + jahr + " um " + stunden+":" + minuten ;
 
     }
 

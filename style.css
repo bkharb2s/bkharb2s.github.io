@@ -1,3 +1,9 @@
+body{
+    background-color: lightskyblue;
+}
+.ccm-messenger {
+    background-color: lightskyblue;
+} 
 .ccm-messenger > .messages {
 
  
@@ -17,7 +23,7 @@
     padding: 20px;
     margin-left: 35%;
     margin-right: 35%;
-    background-color:aquamarine;
+    background-color:white;
     border-radius: 5px;
     margin-top: 3%;
     
@@ -25,15 +31,26 @@
 
 
 .ccm-messenger > .messages > .message > .name:after{
-    content: ' : ';
+    content: ':';
 }
 
 .ccm-messenger > .messages > .message > .text{
-    color: blue;
+    color: black;
 }
 
 .ccm-messenger > .messages > .message > .datum{
-    color: green;
+    color:blue;
+}
+
+.ccm-messenger > .messages > .message > .datum:after{
+    content: ''Uhr:';
+}
+
+.ccm-messenger > .messages > .message > .text:before{
+    content: '"';
+}
+.ccm-messenger > .messages > .message > .text:after{
+    content: '"';
 }
 
 
@@ -43,22 +60,38 @@
     font-size: 20px;
 }
 
+.fa-bitbucket{
+    margin-left: 90%;   
+}
+
 .ccm-messenger > div > div > div > form{
     margin-left: 20%;
     margin-right: 20%;
 }
 
 .ccm-messenger > div > div > div > form >.button{
-    border-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
     width: 20%;
     margin-left: 40%;
     margin-right: 40%;
+    background-color: black;
+    color: white;
+}
+
+
+.ccm-messenger > div > div > div > form >.button:hover{
+    background-color: lawngreen;
+    color: black;
+    font-size: 0.9em;
 }
 
 .ccm-messenger > div > div > div > form >.input{
-    border-radius: 5px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-color: black;
     width: 30%;
-    height: 30px;
+    height: 50px;
     margin-top:5%; 
     margin-left: 35%;
     margin-right: 35%;

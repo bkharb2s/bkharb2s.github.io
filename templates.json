@@ -3,8 +3,19 @@
     "tag": "div",
     "class": "messages"
   },
-
-  "message": {
+    
+    "title_h1":{
+    "tag": "div",
+    "class":"title_h1",
+    "inner": [ {
+        "tag":"h1",
+        "class":"h1", 
+        "value":"Let's Chat!"
+    }
+    ] 
+    },
+    
+    "message": {
     "tag": "div",
     "class": "message",
     "inner": [
@@ -15,6 +26,11 @@
         
       },
         
+      {
+          "tag": "div",
+          "class": "datum",
+          "inner": "%datum%"
+      },
         
       {
         "tag": "div",
@@ -22,11 +38,6 @@
         "inner": "%name%"
       },
         
-      {
-          "tag": "div",
-          "class": "datum",
-          "inner": "%datum%"
-      },
       {
         "tag": "div",
         "class": "text",
@@ -57,13 +68,13 @@
             {
               "tag": "input",
               "class": "input",
-              "placeholder": "Enter message here..."
+              "placeholder": "Verfasse eine Nachricht ..."
             },
             {
               "tag": "input",
               "class": "button",
               "type": "submit",
-              "value": "Send"
+              "value": "Senden"
             }
           ],
           "onsubmit": "%onsubmit%"
