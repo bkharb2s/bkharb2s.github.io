@@ -3,12 +3,14 @@
 }
 
 .ccm-messenger > messages > div > .titel{
-    font-size: 30px;
-    color: darkblue;
+    font-size: 60px;
+    color: lawngreen;
+    
 }
 
 .titel_oben{
     text-align: center;
+    color: lawngreen;
 }
 
 .ccm-messenger > .messages {
