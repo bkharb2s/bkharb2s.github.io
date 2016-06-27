@@ -8,7 +8,7 @@
 
 .titel_oben{
     text-align: center;
-    border-color: 1px solid black;
+    background-color: brown;
 }
 
 .ccm-messenger > .messages {
