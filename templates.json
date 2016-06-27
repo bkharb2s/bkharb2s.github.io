@@ -1,19 +1,37 @@
+ccm.callback["templates.json"](
+
 {
   "main": {
     "tag": "div",
-    "class": "messages"
+    "class": "messages",
+    "inner":[
+        {
+            "tag":"div",
+            "class":"titel",
+            "inner":[
+                {
+                    "tag":"h1",
+                    "class":"titel_oben",
+                    "inner":[
+                         {
+                            "tag":"div",
+                            "class":"fa fa-paper-plane",
+                            
+                        },
+                        " Messenger: Let's Chat ",
+                        {
+                            "tag":"div",
+                            "class":"fa fa-paper-plane-o",
+                            
+                        }
+            
+                    
+                    ]
+            }
+            ]
+        }
+    ]
   },
-    
-    "title_h1":{
-    "tag": "div",
-    "class":"title_h1",
-    "inner": [ {
-        "tag":"h1",
-        "class":"h1", 
-        "value":"Let's Chat!"
-    }
-    ] 
-    },
     
     "message": {
     "tag": "div",
@@ -83,3 +101,4 @@
     ]
   }
 }
+)

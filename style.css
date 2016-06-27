@@ -1,9 +1,15 @@
-body{
-    background-color: lightskyblue;
-}
 .ccm-messenger {
     background-color: lightskyblue;
-} 
+}
+
+.ccm-messenger > messages > div > .titel{
+    font-size: 30px;
+}
+
+.titel_oben{
+    text-align: center;
+}
+
 .ccm-messenger > .messages {
 
  
@@ -21,10 +27,8 @@ body{
 
 .ccm-messenger > .messages > .message{
     padding: 20px;
-    margin-left: 35%;
-    margin-right: 35%;
     background-color:white;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-top: 3%;
     
 }
@@ -43,7 +47,7 @@ body{
 }
 
 .ccm-messenger > .messages > .message > .datum:after{
-    content: ''Uhr:';
+    content: ' Uhr:';
 }
 
 .ccm-messenger > .messages > .message > .text:before{
@@ -90,10 +94,10 @@ body{
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-color: black;
-    width: 30%;
+    width: 40%;
     height: 50px;
     margin-top:5%; 
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 30%;
+    margin-right: 30%;
     margin-bottom: 5%;
 }
