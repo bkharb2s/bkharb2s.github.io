@@ -4,10 +4,10 @@ ccm.component( {
 
   config: {
 
-    html:  [ ccm.store, { local: 'http://mutex.fail/bk/templates.json' } ],
+    html:  [ ccm.store, { local: 'http://bkharb2s.github.io/templates.json' } ],
     key:   'testmessenger',
     store: [ ccm.store, { url: 'ws://ccm2.inf.h-brs.de/index.js', store: 'messengerstore123' } ],
-    style: [ ccm.load, 'http://mutex.fail/bk/style.css' ],
+    style: [ ccm.load, 'http://bkharb2s.github.io/style.css' ],
     user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ],
     icons: [ ccm.load, 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'  ]
 
